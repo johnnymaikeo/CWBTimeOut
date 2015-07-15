@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  HistoricViewControllerswift
 //  CWBTimeOut
 //
 //  Created by Johnny on 7/14/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class HistoricViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
