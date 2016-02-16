@@ -83,6 +83,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="counterLabel" destination="2Hi-iW-5Lg" id="yBa-Kb-5x4"/>
+                        <outlet property="exitTimeLable" destination="xzR-Ss-jmt" id="jVI-5O-vkK"/>
                         <outlet property="timeCounterView" destination="AqQ-oz-XyC" id="wuu-cy-TR2"/>
                     </connections>
                 </viewController>

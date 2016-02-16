@@ -16,6 +16,7 @@
 		EF5766561B55DAB1004D0478 /* CWBTimeOutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5766551B55DAB1004D0478 /* CWBTimeOutTests.swift */; };
 		EF5766611B55DB9F004D0478 /* CurrentBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF5766601B55DB9F004D0478 /* CurrentBackground.jpg */; };
 		EF5766631B55DD46004D0478 /* TimeCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5766621B55DD46004D0478 /* TimeCounterView.swift */; };
+		EF61A47E1B5DDE6D003F99EE /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF61A47D1B5DDE6D003F99EE /* EstimoteSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		EF5766551B55DAB1004D0478 /* CWBTimeOutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CWBTimeOutTests.swift; sourceTree = "<group>"; };
 		EF5766601B55DB9F004D0478 /* CurrentBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CurrentBackground.jpg; sourceTree = "<group>"; };
 		EF5766621B55DD46004D0478 /* TimeCounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeCounterView.swift; sourceTree = "<group>"; };
+		EF61A47D1B5DDE6D003F99EE /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
+		EF61A47F1B5DDEA5003F99EE /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF61A47E1B5DDE6D003F99EE /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 		EF57663A1B55DAB1004D0478 /* CWBTimeOut */ = {
 			isa = PBXGroup;
 			children = (
+				EF61A47C1B5DDE56003F99EE /* Framework */,
 				EF5766651B55DD52004D0478 /* Controller */,
 				EF5766641B55DD4E004D0478 /* View */,
 				EF57665F1B55DB67004D0478 /* Images */,
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				EF57663C1B55DAB1004D0478 /* Info.plist */,
+				EF61A47F1B5DDEA5003F99EE /* ObjCBridge.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -145,6 +151,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		EF61A47C1B5DDE56003F99EE /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				EF61A47D1B5DDE6D003F99EE /* EstimoteSDK.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,6 +203,8 @@
 		EF5766301B55DAB1004D0478 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = ExxonMobil;
 				TargetAttributes = {
@@ -376,9 +392,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CWBTimeOut",
+				);
 				INFOPLIST_FILE = CWBTimeOut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "${PROJECT_NAME}/ObjCBridge.h";
 			};
 			name = Debug;
 		};
@@ -386,9 +407,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CWBTimeOut",
+				);
 				INFOPLIST_FILE = CWBTimeOut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "${PROJECT_NAME}/ObjCBridge.h";
 			};
 			name = Release;
 		};
@@ -445,6 +471,7 @@
 				EF57665B1B55DAB1004D0478 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF57665C1B55DAB1004D0478 /* Build configuration list for PBXNativeTarget "CWBTimeOutTests" */ = {
 			isa = XCConfigurationList;
@@ -453,6 +480,7 @@
 				EF57665E1B55DAB1004D0478 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
